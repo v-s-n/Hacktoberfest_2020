@@ -1,0 +1,71 @@
+//PROGRAM TO ALLOCATE MINIMUM NUMBER OF PAGES
+#include<bits/stdc++.h>
+using namespace std;
+bool isvalid(int arr[],int n,int no,int max)
+{
+    int student=1;//number of student initially one
+    int sum=0;
+    for(int i=0;i<n;i++)
+    {
+        sum+=arr[i];
+        if(sum>max)//if no of pages is greater than tha maximum required pages we increase student numbers
+        {
+            student++;
+            sum=arr[i];
+        }
+        if(student>no)//if student number greater than the distributed number it will be false
+           return false;
+    }
+    return true;
+}
+int Binarysearch(int arr[],int n,int no)
+{
+    int sum=0;
+    int max=arr[0];
+    for(int i=0;i<n;i++)
+    {
+        sum+=arr[i];
+        if(arr[i]>=max)
+           max=arr[i];
+    }
+    if(no>n)//If case where number of student are greater than books
+       return -1;
+    int start=max;//initialize with maximum paged book
+    int end=sum;//sum of all pages of book which in given 
+    int res=-1;//if case where there is no such scheme exit where we can't distribute book among students
+    while(start<=end)
+    {
+        int mid=start+(end-start)/2;
+        if(isvalid(arr,n,no,mid)==true)//function check the one of the distribution is exist true
+        {
+            res=mid;
+            end=mid-1;
+        }
+        else
+            start=mid+1;
+    }
+    return res;
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+        cin>>arr[i];
+    int k;
+    cin>>k;
+    int ans=Binarysearch(arr,n,k);
+    cout<<ans;
+    return 0;
+}
+
+
+
+
+
+
+
+
+
