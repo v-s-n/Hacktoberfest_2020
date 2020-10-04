@@ -1,0 +1,23 @@
+#include <iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+    int t,a,b,i,j,k,count;
+    cin>>t;
+    for(i=0;i<t;i++)
+    {
+        cin>>a>>b;
+        count=0;
+        j=a/sqrt(a);
+        k=b/sqrt(b);
+        while(j<=k)
+        {
+            if(pow(j,2)>=a&&pow(k,2)<=b)
+                count++;
+            j++;
+        }
+        cout<<count<<endl;
+    }
+    return 0;
+}
