@@ -1,1 +1,36 @@
-print("WELCOME")
+#include <stdio.h>
+
+int main()
+{
+	int num;
+	scanf("%d", &num);
+	for(int i=0;i<num;i++)
+	{
+		int m,n,l=0,x=0;
+		scanf("%d %d",&m,&n);
+		char a[m][n*2];
+		for(int j=0;j<m;j++)
+		{
+			for(int k=0;k<n*2;k++)
+			{
+				scanf("%c",&a[j][k]);
+			}
+		}
+		int k=(int)(a[1][0]);
+	//	printf("%d",k);
+		for(int j=0;j<m;j++)
+		{
+			for(int k=0;k<n*2;k++)
+			{
+				if((int)(a[j][k])==47&&(int)(a[j][k+2])==92&&(int)(a[j+1][k])==92&&(int)(a[j+1][k+2])==47&&k+2<2*n)
+				{
+					x++;
+					//printf("*.....*\n");
+				//	printf("\n%d ..%d\n",j,k);
+				}
+			}
+		}
+
+		printf("%d\n",x);
+	}
+}
