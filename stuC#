@@ -1,0 +1,159 @@
+using System;
+using System.Collections.Generic;
+namespace ConsoleApplication1
+{
+class Person
+{
+public string name;
+}
+class Teacher : Person
+{
+public void Show()
+{
+Console.WriteLine("Teacher Name is :{0} and qualification is :{1}",              (name, qualification);
+}
+public string qualification;
+}
+class Student:Person
+{
+public string stream;
+public string rollno;
+}
+class Exams:Student
+{
+public Dictionary<string, double> sub = new Dictionary<string, double>();
+}
+interface Talents
+{
+public void Show();
+}
+class Awards:Exams,Talents
+{
+public List<string> talents = new List<string>();
+public void Show()
+{
+Console.WriteLine("Student Name is {0} and roll no is {1}", name, rollno);
+Console.WriteLine("Student's Stream is {0} ", stream);
+foreach (KeyValuePair<string,double>subject in sub)
+{
+Console.WriteLine("{0} and {1}", subject.Key, subject.Value);
+}
+Console.WriteLine("Student Talents are :");
+foreach(string tal in talents)
+{
+Console.WriteLine(tal);
+}
+}
+}
+class Program
+{
+static void Main(string[] args)
+{
+Teacher t = new Teacher();
+Awards a = new Awards();
+Console.WriteLine("Enter the name of Teacher :");
+t.name = Console.ReadLine();
+Console.WriteLine("Enter the qualification:");
+t.quali = Console.ReadLine();
+Console.WriteLine("Enter the student name:");
+a.name = Console.ReadLine();
+Console.WriteLine("Enter the Student Rollno:");
+a.rollno = Console.ReadLine();
+Console.WriteLine("Enter Student Stream:");
+a.stream = Console.ReadLine();
+Console.WriteLine("Enter the Subject Name:");
+int num = Convert.ToInt32(Console.ReadLine());
+while (num > 0)
+{
+Console.WriteLine("Subject:");
+String s = Console.ReadLine();
+Console.WriteLine("Enter marks in {0}:",s);
+a.sub.Add(s, Convert.ToDouble(Console.ReadLine()));
+num--;
+}
+Console.WriteLine("Enter the talents:");
+a.talents.AddRange(Console.ReadLine().Split(''));
+t.Show();
+a.Show();
+}
+}using System;
+using System.Collections.Generic;
+namespace ConsoleApplication1
+{
+class Person
+{
+public string name;
+}
+class Teacher : Person
+{
+public void Show()
+{
+Console.WriteLine("Name of teacher is :{0} and qualification is :{1}", name, qualification);
+}
+public string qualification;
+}
+class Student : Person
+{
+public string stream;
+public string rollno;
+}
+class Exams : Student
+{
+public Dictionary<string, double> sub = new Dictionary<string, double>();
+}
+interface Talents
+{
+public void Show();
+}
+class Awards : Exams, Talents
+{
+public List<string> talents = new List<string>();
+public void Show()
+{
+Console.WriteLine("Student Name is {0} and roll no is {1}", name, rollno);
+Console.WriteLine("Student Stream is {0} ", stream);
+foreach (KeyValuePair<string, double> subject in sub)
+{
+Console.WriteLine("{0} and {1}", subject.Key, subject.Value);
+}
+Console.WriteLine("Talent of student are:");
+foreach (string tal in talents)
+{
+Console.WriteLine(tal);
+}
+}
+}
+class Program
+{
+static void Main(string[] args)
+{
+Teacher t = new Teacher();
+Awards a = new Awards();
+Console.WriteLine("Enter the teacher name:");
+t.name = Console.ReadLine();
+Console.WriteLine("Enter the qualification:");
+t.quali = Console.ReadLine();
+Console.WriteLine("Enter the student name:");
+a.name = Console.ReadLine();
+Console.WriteLine("Enter the student rollno :");
+a.rollno = Console.ReadLine();
+Console.WriteLine("Enter the student Stream:");
+a.stream = Console.ReadLine();
+Console.WriteLine("Enter the number of subjects:");
+int num = Convert.ToInt32(Console.ReadLine());
+while (num > 0)
+{
+Console.WriteLine("Subject:");
+String s = Console.ReadLine();
+Console.WriteLine("Enter marks in {0}:", s);
+a.sub.Add(s, Convert.ToDouble(Console.ReadLine()));
+num--;
+}
+Console.WriteLine("Enter the talents:");
+a.talents.AddRange(Console.ReadLine().Split(''));
+t.Show();
+a.Show();
+}
+}
+}
+}
