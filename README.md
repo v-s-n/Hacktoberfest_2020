@@ -13,6 +13,7 @@ Click on "Start Hacking" and sign in with your GitHub account.
 GitHub repository URLs will reference both the username associated with the owner of the repository, as well as the repository name. For example, acmbvp is the owner of the Hacktoberfest repository, so the GitHub URL for this project is:
 
 https://github.com/jYOTIHARODE/Hacktoberfest_2020
+
 When you’re on the main page of a repository, you’ll see a button to "Star" and “Fork” the repository on the upper right-hand side of the page, underneath your user icon.
 
 
@@ -20,19 +21,21 @@ When you’re on the main page of a repository, you’ll see a button to "Star" 
 We’ll use the `git clone`  command along with the URL that points to your fork of the repository onterminal window.
 
 This URL will be similar to the URL above, except now it will end with `.git.` In the cloud_haiku example above, the URL will look like this:
+
 https://github.com/your-username/Hacktoberfest.git
 
 You can alternatively copy the URL by using the green “Clone or download” button from your repository page that you just forked from the original repository page.
 
 	
 Once we have the URL, we’re ready to clone the repository. To do this, we’ll combine the git clone command with the repository URL from the command line in a terminal window:
+
 `git clone https://github.com/your-username/Hacktoberfest.git`
 
 
 ### 4. Create a New Branch
 To create your branch, from your terminal window, change your directory so that you are working in the directory of the repository. Be sure to use the actual name of the repository (i.e. Hacktoberfest) to switch into that directory.
 	
-#####    `cd Hacktoberfest`
+#####  `cd Hacktoberfest`
 Now, we’ll create our new branch with the git branch command. Make sure you name it descriptively so that others working on the project understand what you are working on.
 
 ##### `git branch new-branch-name`
@@ -50,9 +53,8 @@ Once you have modified existing files or added new files to the project, you can
 	
 ##### ` git add -A ` or ` git add . `
 
-**The commit message is an important aspect of your code contribution; it helps the other contributors fully understand the change you have made, why you made it, and how significant it is. Additionally, commit messages provide a historical record of the changes for the project at large, helping future contributors along the way.**
+*The commit message is an important aspect of your code contribution; it helps the other contributors fully understand the change you have made, why you made it, and how significant it is. Additionally, commit messages provide a historical record of the changes for the project at large, helping future contributors along the way.*
 
-	
 ###### ` Example: `
 ##### ` git commit -m "Updated Readme.md" `
 	
@@ -91,5 +93,5 @@ Now merge any changes that were made in the original repository’s master branc
 At this point, you are ready to make a pull request to the original repository.	At this point, you are ready to make a pull request to the original repository.
 Navigate to your forked repository, and press the “New pull request” button on your left-hand side of your Repo page.
 	
-# Hurray! You just got closer to completing your Hacktoberfest challenge :smiley:
+# Hurray! You just got closer to completing your Hacktoberfest 		challenge :smiley:
 ![PR](https://lh3.googleusercontent.com/proxy/Y1ZF0AU36GHLd5sjbayWuO0WGov9a4MksAVNZKbTTlsXfxu3scHfIQ1xAy2-HkvjmBeSd3FHcQQtghJmRSFjTVTjejEVcNM)
