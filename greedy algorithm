@@ -1,0 +1,61 @@
+
+
+    #include <bits/stdc++.h>
+     
+    #define mp make_pair
+    #define pb push_back
+    #define f first
+    #define s second
+    #define ll long long
+    #define forn(i, a, b) for(int i = (a); i <= (b); ++i)
+    #define forev(i, b, a) for(int i = (b); i >= (a); --i)
+    #define VAR(v, i) __typeof( i) v=(i)
+    #define forit(i, c) for(VAR(i, (c).begin()); i != (c).end(); ++i)
+    #define all(x) (x).begin(), (x).end()
+    #define sz(x) ((int)(x).size())
+    #define file(s) freopen(s".in","r",stdin); freopen(s".out","w",stdout);
+     
+    using namespace std;
+     
+    const int maxn = (int)1e6 + 100;
+    const int mod = (int)1e9 + 7;
+    const int P = (int) 1e6 + 7; 
+    const double pi = acos(-1.0);
+    #define inf mod
+     
+    typedef long double ld;
+    typedef pair<int, int> pii;
+    typedef pair<ll, ll> pll;
+    typedef vector<int> vi;   
+    typedef vector<ll> Vll;               
+    typedef vector<pair<int, int> > vpii;
+    typedef vector<pair<ll, ll> > vpll;                        
+    int n;
+    pii a[maxn];
+    bool type[maxn];
+    ll sum;
+    void solve(){
+      scanf("%d", &n);
+      forn(i, 1, n) scanf("%d", &a[i].s);
+      forn(i, 1, n) scanf("%d", &a[i].f), sum += a[i].f;
+      sort(a + 1, a + n + 1);
+      forn(i, 1, n) a[i].s += a[i].f;
+      priority_queue<int> q;
+      ll ans = 0;
+      q.push(a[1].s);
+      forn(i, 1, n){
+        ans += q.top();
+        q.pop();
+        if(i + 1 <= n) q.push(a[i + 1].s);
+        if(i + 2 <= n) q.push(a[i + 2].s);
+        i++;
+      }
+      printf("%lld\n", ans - sum);
+    }
+    main () {
+      int t = 1;
+      scanf("%d", &t);
+      while(t--)
+        solve(); 
+    }     
+
