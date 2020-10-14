@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>kilograms to grams convertor</title>
+	<style type="text/css">
+		body{
+			font-size: 2vw;
+			color: white;
+			background-image: url(https://i.imgur.com/ZApCZum.jpg);
+			background-attachment: fixed;
+			background-size: 100% 100%;
+			background-origin: border-box;
+		}
+		fieldset{
+			top: 20%;
+			left: 10%;
+			padding: 1.2rem 2rem;
+			position: absolute;
+			border:4px double red;
+			border-radius: 5px;
+			border-top-right-radius: 70px;
+		}
+		::placeholder{
+			font-size: 1.54vw;
+			color: #fff;
+		}
+		input{
+			border: none;
+			border-bottom: 2px solid red;
+			background-color: transparent;
+			padding: .5vmin;
+			outline: 0;
+			font-size: 1.6vw;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+
+		<fieldset>
+			<legend>Kilograms to Grams</legend>
+<p>
+  <label>Kilograms: &nbsp;</label>
+  <input id="inputPounds" type="number" placeholder="&nbsp;kg" oninput="weightConverter(this.value)" onchange="weightConverter(this.value)" contenteditable min="0">
+</p>
+<p>
+	Grams: <span id="outputGrams"></span>
+</p>
+</fieldset>
+
+<script type="text/javascript">
+	function weightConverter(valNum) {
+  document.getElementById("outputGrams").innerHTML = valNum * 1000;
+}
+</script>
+</body>
+</html>
